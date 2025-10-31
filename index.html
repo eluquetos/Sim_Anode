@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETROENERGY - Simuladores de Protección Catódica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f7f9;
+            --card-bg-color: #ffffff;
+            --primary-color: #0052cc;
+            --primary-hover-color: #0041a3;
+            --text-color: #334155;
+            --title-color: #1e293b;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .main-container {
+            background-color: var(--card-bg-color);
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.02);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+        }
+        header h1 {
+            color: var(--title-color);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: var(--text-color);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+        .menu-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .menu-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 82, 204, 0.1);
+            border-color: var(--primary-color);
+        }
+        .menu-link .icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            background-color: #eef4ff;
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+        .menu-link .icon svg {
+            width: 22px;
+            height: 22px;
+        }
+        footer {
+            margin-top: 2.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>PETROENERGY</h1>
+            <p>Simuladores de Protección Catódica</p>
+        </header>
+        <main class="menu-options">
+            <a href="simul-3r-v2.html" class="menu-link">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                    </svg>
+                </span>
+                Simulador de 3 Ramas
+            </a>
+            <a href="simul-4r-v2.html" class="menu-link">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h8.25a2.25 2.25 0 012.25 2.25v9a2.25 2.25 0 01-2.25 2.25H8.25a2.25 2.25 0 01-2.25-2.25v-9a2.25 2.25 0 012.25-2.25zM15 3.75a.75.75 0 00-1.5 0v2.25a.75.75 0 001.5 0V3.75zM9 3.75a.75.75 0 00-1.5 0v2.25a.75.75 0 001.5 0V3.75z" />
+                    </svg>
+                </span>
+                Simulador de 4 Ramas
+            </a>
+        </main>
+        <footer>
+            <p>&copy; 2025 - eluquetos</p>
+        </footer>
+    </div>
+    <!-- Force redeploy -->
+</body>
+</html>

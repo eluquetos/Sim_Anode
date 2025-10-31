@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Protección Catódica (4 Ramas) - Interactivo</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="simul-4r.css">
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-7xl mx-auto mb-4 text-center">
+        <a href="index.html" class="text-blue-600 hover:text-blue-800 hover:underline font-medium">&#8592; Volver al Menú Principal</a>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Encabezado -->
+        <header class="mb-6">
+            <h1 class="text-3xl font-bold text-slate-800">Simulador de Protección Catódica</h1>
+            <p class="text-lg text-slate-600">ANODEFLEX - Sistema de 4 Ramas (Interactivo)</p>
+        </header>
+
+        <!-- Contenedor Principal -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Columna de Entradas -->
+            <div class="lg:col-span-2 card">
+                <h2 class="text-xl font-semibold text-blue-800 border-b border-slate-200 pb-2 mb-4">
+                    1. Datos de Entrada
+                </h2>
+
+                <!-- Entrada Global -->
+                <div class="mb-6 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <label for="i_subr" class="label-text text-blue-900">Corriente por Sub-rama (I_subr) [A]</label>
+                    <p class="text-sm text-blue-700 mb-2">Este valor debe ser idéntico para todas las 8 sub-ramas.</p>
+                    <input type="number" id="i_subr" class="input-field" placeholder="Ej: 0.50" value="0.53" step="0.01">
+                </div>
+
+                <!-- Entradas por Rama -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    
+                    <!-- Rama 1 -->
+                    <div class="border p-4 rounded-lg bg-slate-50">
+                        <h3 class="font-semibold text-slate-700">Rama 1 (Más Cercana)</h3>
+                        <div class="mt-3 space-y-3">
+                            <div>
+                                <label for="ra_11" class="label-text">Ra₁₁ [Ω]</label>
+                                <input type="number" id="ra_11" class="input-field" placeholder="0.00" value="5.5" step="0.01">
+                            </div>
+                            <div>
+                                <label for="ra_12" class="label-text">Ra₁₂ [Ω]</label>
+                                <input type="number" id="ra_12" class="input-field" placeholder="0.00" value="5.5" step="0.01">
+                            </div>
+                            <div>
+                                <label for="rc_1" class="label-text">Rc₁ [Ω]</label>
+                                <input type="number" id="rc_1" class="input-field" placeholder="0.00" value="0.473" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rama 2 -->
+                    <div class="border p-4 rounded-lg bg-slate-50">
+                        <h3 class="font-semibold text-slate-700">Rama 2</h3>
+                        <div class="mt-3 space-y-3">
+                            <div>
+                                <label for="ra_21" class="label-text">Ra₂₁ [Ω]</label>
+                                <input type="number" id="ra_21" class="input-field" placeholder="0.00" value="5.3" step="0.01">
+                            </div>
+                            <div>
+                                <label for="ra_22" class="label-text">Ra₂₂ [Ω]</label>
+                                <input type="number" id="ra_22" class="input-field" placeholder="0.00" value="6.1" step="0.01">
+                            </div>
+                            <div>
+                                <label for="rc_2" class="label-text">Rc₂ [Ω]</label>
+                                <input type="number" id="rc_2" class="input-field" placeholder="0.00" value="1.401" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rama 3 -->
+                    <div class="border p-4 rounded-lg bg-slate-50">
+                        <h3 class="font-semibold text-slate-700">Rama 3</h3>
+                        <div class="mt-3 space-y-3">
+                            <div>
+                                <label for="ra_31" class="label-text">Ra₃₁ [Ω]</label>
+                                <input type="number" id="ra_31" class="input-field" placeholder="0.00" value="4.9" step="0.01">
+                            </div>
+                            <div>
+                                <label for="ra_32" class="label-text">Ra₃₂ [Ω]</label>
+                                <input type="number" id="ra_32" class="input-field" placeholder="0.00" value="5.4" step="0.01">
+                            </div>
+                            <div>
+                                <label for="rc_3" class="label-text">Rc₃ [Ω]</label>
+                                <input type="number" id="rc_3" class="input-field" placeholder="0.00" value="1.468" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rama 4 -->
+                    <div class="border p-4 rounded-lg bg-slate-50">
+                        <h3 class="font-semibold text-slate-700">Rama 4 (Más Lejana)</h3>
+                        <div class="mt-3 space-y-3">
+                            <div>
+                                <label for="ra_41" class="label-text">Ra₄₁ [Ω]</label>
+                                <input type="number" id="ra_41" class="input-field" placeholder="0.00" value="5.5" step="0.01">
+                            </div>
+                            <div>
+                                <label for="ra_42" class="label-text">Ra₄₂ [Ω]</label>
+                                <input type="number" id="ra_42" class="input-field" placeholder="0.00" value="5.0" step="0.01">
+                            </div>
+                            <div>
+                                <label for="rc_4" class="label-text">Rc₄ [Ω]</label>
+                                <input type="number" id="rc_4" class="input-field" placeholder="0.00" value="1.5" step="0.001">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div> <!-- Fin Columna de Entradas -->
+            
+            <!-- Columna de Acción y Resultados -->
+            <div class="lg:col-span-1 space-y-6">
+
+                <!-- Botón de Cálculo -->
+                <div class="card">
+                     <button id="calculate-btn" class="w-full bg-blue-600 text-white text-lg font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-blue-300">
+                        Calcular Sistema
+                    </button>
+                    <div id="status-message" class="mt-4 text-center text-sm font-medium"></div>
+                </div>
+
+                <!-- Resultados Principales -->
+                <div class="card">
+                    <h2 class="text-xl font-semibold text-blue-800 border-b border-slate-200 pb-2 mb-4">
+                        2. Resultados Principales
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="result-box flex justify-between items-center">
+                            <span class="result-label">Voltaje Rectificador (Rect) [V]</span>
+                            <span id="result-rect" class="result-value">0.000</span>
+                        </div>
+                        <div class="result-box flex justify-between items-center">
+                            <span class="result-label">Corriente Total (It) [A]</span>
+                            <span id="result-it" class="result-value">0.000</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Fin Columna de Acción y Resultados -->
+
+            <!-- Fila de Resultados Detallados -->
+            <div class="lg:col-span-3 card">
+                <h2 class="text-xl font-semibold text-blue-800 border-b border-slate-200 pb-2 mb-4">
+                    3. Resultados Detallados (Valores Calculados)
+                </h2>
+
+                <!-- Reóstatos Calculados -->
+                <h3 class="font-semibold text-slate-700 mb-3">Resistencias de Reóstatos (Reo) [Ω]</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <!-- Reo Rama 4 -->
+                    <div class="result-box space-y-2">
+                        <div class="font-medium text-slate-800">Reo Rama 4</div>
+                        <div class="flex justify-between"><span class="result-label">Reo₄₁:</span> <span id="reo_41" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">Reo₄₂:</span> <span id="reo_42" class="result-value">0.000</span></div>
+                    </div>
+                    <!-- Reo Rama 3 -->
+                    <div class="result-box space-y-2">
+                        <div class="font-medium text-slate-800">Reo Rama 3</div>
+                        <div class="flex justify-between"><span class="result-label">Reo₃₁:</span> <span id="reo_31" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">Reo₃₂:</span> <span id="reo_32" class="result-value">0.000</span></div>
+                    </div>
+                    <!-- Reo Rama 2 -->
+                    <div class="result-box space-y-2">
+                        <div class="font-medium text-slate-800">Reo Rama 2</div>
+                        <div class="flex justify-between"><span class="result-label">Reo₂₁:</span> <span id="reo_21" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">Reo₂₂:</span> <span id="reo_22" class="result-value">0.000</span></div>
+                    </div>
+                    <!-- Reo Rama 1 -->
+                    <div class="result-box space-y-2">
+                        <div class="font-medium text-slate-800">Reo Rama 1</div>
+                        <div class="flex justify-between"><span class="result-label">Reo₁₁:</span> <span id="reo_11" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">Reo₁₂:</span> <span id="reo_12" class="result-value">0.000</span></div>
+                    </div>
+                </div>
+
+                <!-- Valores Intermedios -->
+                <h3 class="font-semibold text-slate-700 mb-3">Valores Intermedios (Aguas Arriba)</h3>
+                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="result-box space-y-2">
+                        <div class="flex justify-between"><span class="result-label">V₄ [V]:</span> <span id="v_4" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">R₄ [Ω]:</span> <span id="r_4" class="result-value">0.000</span></div>
+                    </div>
+                     <div class="result-box space-y-2">
+                        <div class="flex justify-between"><span class="result-label">V₃ [V]:</span> <span id="v_3" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">R₃ [Ω]:</span> <span id="r_3" class="result-value">0.000</span></div>
+                    </div>
+                     <div class="result-box space-y-2">
+                        <div class="flex justify-between"><span class="result-label">V₂ [V]:</span> <span id="v_2" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">R₂ [Ω]:</span> <span id="r_2" class="result-value">0.000</span></div>
+                    </div>
+                     <div class="result-box space-y-2">
+                        <div class="flex justify-between"><span class="result-label">V₁ (Rect) [V]:</span> <span id="v_1" class="result-value">0.000</span></div>
+                        <div class="flex justify-between"><span class="result-label">R₁ [Ω]:</span> <span id="r_1" class="result-value">0.000</span></div>
+                    </div>
+                 </div>
+
+            </div>
+
+        </div>
+
+        <footer class="text-center mt-8 text-sm text-slate-500">
+            Simulador de circuito DC basado en las instrucciones de cálculo provistas.
+        </footer>
+    </div>
+
+    <script src="simul-4r.js" defer></script>
+</body>
+</html>
